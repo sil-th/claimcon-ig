@@ -1,0 +1,54 @@
+# ╭─────────────────────────────────ImplementationGuide-fish.json──────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: silth.fhir.th.claimcon
+canonical: https://fhir-ig.sil-th.org/claimcon
+version: 0.1.0
+name: THClaimConImplementaionGuide
+title: (Draft) TH Claim Consolidation (ClaimCon) - FHIR Implementation Guide
+status: draft
+publisher: Standards and Interoperability Lab - Thailand (SIL-TH)
+# contact:
+#   - name: Bill Cod
+#     telecom:
+#       - system: email
+#         value: cod@reef.gov
+jurisdiction: "urn:iso:std:iso:3166#TH"
+description: A representation of Thailand's public health claim dataset in FHIR format
+license: CC0-1.0
+fhirVersion: 4.3.0
+dependencies:
+  sil-th.terms.core: dev
+  silth.fhir.th.extensions: dev
+  hl7.fhir.uv.ips: 1.0.0
+parameters:
+  apply-publisher: true
+  apply-contact: true
+  show-inherited-invariants: false
+  excludettl: true
+  excludemap: true
+copyrightYear: 2023+
+releaseLabel: draft
+
+pages:
+  index.md:
+    title: TH Claim Consolidation (ClaimCon)
+  profiles.md:
+    title: รายการ Profiles
+  extensions.md:
+    title: รายการ Extensions
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  หน้าแรก: index.html
+  สารบัญ: toc.html
+  เนื้อหาทั้งหมด: artifacts.html
+  Profiles: profiles.html
+  Extensions: extensions.html
+  # 43 แฟ้ม plus: files-listing.html
+  # Other Resources:
+  #   "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html

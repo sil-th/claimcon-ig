@@ -1,0 +1,16 @@
+{
+  "package-id": "silth.fhir.th.claimcon",
+  "canonical": "https://fhir-ig.sil-th.org/claimcon/",
+  "title": "TH Claim Consolidation - Implementation Guide",
+  "introduction": "A representation of Thailand's public health claim datasets in FHIR format.",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "https://fhir-ig.sil-th.org/claimcon/",
+      "status": "ci-build",
+      "current": true,
+      "fhirversion": "4.3.0"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+== Suppressed Messages ==
+
+# Add warning and/or information messages here after you've confirmed that they aren't really a problem
+# (And include comments like this justifying why)
+# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# fake code systems from core spec
+The link 'http://terminology.hl7.org/ValueSet/v2-2.7-0360' for "http://terminology.hl7.org/ValueSet/v2-2.7-0360" cannot be resolved
+The link 'practitioner-role.html' for "practitioner-role" cannot be resolved
+The reference http://hl7.org/fhir/ValueSet/practitioner-role could not be resolved
+ValueSet http://terminology.hl7.org/ValueSet/v2-2.7-0360 not found by validator
+ValueSet http://hl7.org/fhir/ValueSet/practitioner-role not found by validator
+Canonical URL 'http://hl7.org/fhir/ValueSet/practitioner-role' does not resolve
+
+# Ignore no demo
+WARNING: StructureDefinition.where(url = 'https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-address-home-reference'): The Implementation Guide contains no examples for this extension
+WARNING: StructureDefinition.where(url = 'https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/ex-patient-pid-remove-reason'): The Implementation Guide contains no examples for this extension
+WARNING: StructureDefinition.where(url = 'https://fhir-ig.sil-th.org/mophpc1/StructureDefinition/mophpc-patient-extension-disability'): The Implementation Guide contains no examples for this extension
+
+# Ignore external code systems
+Code System URI 'http://terminology.hl7.org/CodeSystem/icd9cm' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-icd10tm' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-local-drug-code' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-local-procedure-code' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-24drug' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-tmlt' is unknown so the code cannot be validated
+Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-tmt' is unknown so the code cannot be validated
+
+# Ignore TMT TMLT
+Unable to check whether code is in value set https://terms.sil-th.org/ValueSet/th-tmt: [Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-tmt' is unknown so the code cannot be validated]
+Unable to check whether code is in value set https://terms.sil-th.org/ValueSet/th-tmlt: [Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-tmlt' is unknown so the code cannot be validated]
+Unable to check whether code is in value set https://terms.sil-th.org/ValueSet/vs-int-icd9cm-procedure: [Code System URI 'http://terminology.hl7.org/CodeSystem/icd9cm' is unknown so the code cannot be validated]
+Unable to check whether code is in value set https://terms.sil-th.org/ValueSet/vs-th-icd10tm: [Code System URI 'https://terms.sil-th.org/CodeSystem/cs-th-icd10tm' is unknown so the code cannot be validated]
