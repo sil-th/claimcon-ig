@@ -1,34 +1,40 @@
-Profile: ClaimConEncounterOpd
+Profile: ClaimConEncounterAe
 Parent: Encounter
-Id: claimcon-encounter-opd
-Title: "ClaimCon Encounter: OPD"
-Description: "การรับบริการ OPD"
-* ^url = $SD_Encounter_Opd
+Id: claimcon-encounter-ae
+Title: "ClaimCon Encounter: AE"
+Description: "การรับบริการ Accident / Emergency"
+* ^url = $SD_Encounter_Ae
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
+  $EX_CHI_EncounterAccidentOrEmer named accidentOrEmer 0..1 MS and
+  $EX_CHI_EncounterAccidentCoverage named otherAccidentCoverage 0..1 MS and
+  $EX_CHI_EncounterReferPurpose named referPurpose 0..1 MS
+  // $EX_TH_EncounterLeaveDay named leaveDay 0..1 MS
 //     $EX_TH_EncounterPatientLocationType named patientLocationType 0..1 MS and
 //     $EX_TH_EncounterServiceHour named serviceHour 0..1 MS and
-    $EX_TH_EncounterProviderType named providerType 0..1 MS
+    // $EX_TH_EncounterProviderType named providerType 0..1 MS
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains
-    vn 0..1 MS
-* identifier[vn] ^short = "เลขที่การรับบริการ (VN)"
-* identifier[vn]
+    an 0..1 MS
+* identifier[an] ^short = "เลขที่ผู้ปวยใน (AN)"
+* identifier[an]
   * type from $VS_TH_IdentifierType (extensible)
-  * type = $CS_TH_IdentifierType#localVn
+  * type = $CS_TH_IdentifierType#localAn
   * system 1..
-  * system obeys VN-uri
-  * system ^example.label = "VN namespace"
-  * system ^example.valueUri = $ID_LO_VN
+  * system obeys AN-uri
+  * system ^example.label = "AN namespace"
+  * system ^example.valueUri = $ID_LO_AN
   * value 1..
 * status MS
 * class MS
-// * priority MS
+* priority MS
+  * extension contains
+    $EX_TH_ServiceRequestReferPriorityReason named priorityReason 0..1 MS
 // * priority.coding ^slicing.discriminator[0].type = #value
 // * priority.coding ^slicing.discriminator[=].path = "system"
 // * priority.coding ^slicing.rules = #open
@@ -43,17 +49,15 @@ Description: "การรับบริการ OPD"
 // * priority.coding[thccAccident].system 1..
 // * priority.coding[thccAccident].system = $CS_THCC_AccidentPriority (exactly)
 // * priority.coding[thccAccident].code 1..
-* type MS
-* type ^slicing.discriminator[0].type = #value
-* type ^slicing.discriminator[=].path = "$this"
-* type ^slicing.rules = #open
-* type contains
-    chiClass 0..1 MS and
-    chiTypeServe 0..1 MS
-* type[chiClass].coding from $VS_CHI_ServiceClass (extensible)
-* type[chiTypeServe].coding from $VS_CHI_TypeServ (extensible)
-* serviceType MS
-* serviceType from $VS_CHI_Clinic (extensible)
+// * type MS
+// * type ^slicing.discriminator[0].type = #value
+// * type ^slicing.discriminator[=].path = "$this"
+// * type ^slicing.rules = #open
+// * type contains
+//     chiClass 0..1 MS and
+//     chiTypeServe 0..1 MS
+// * type[chiClass].coding from $VS_CHI_ServiceClass (extensible)
+// * type[chiTypeServe].coding from $VS_CHI_TypeServ (extensible)
 * subject MS
 * subject only Reference($SD_Patient_Base)
 // * basedOn MS
@@ -74,6 +78,8 @@ Description: "การรับบริการ OPD"
 // * participant.type.coding[43plus].code 1..
 * participant.individual only Reference($SD_Practitioner_Base)
 * period MS
+  * start MS
+  * end MS
 // * length MS
 // * reasonCode MS
 // * reasonCode.coding ^slicing.discriminator.type = #value
@@ -90,35 +96,23 @@ Description: "การรับบริการ OPD"
 // * reasonCode.coding[snomed].system 1..
 // * reasonCode.coding[snomed].system = $SCT (exactly)
 // * reasonCode.coding[snomed].code 1..
-* diagnosis MS
-  * use.coding ^slicing.discriminator.type = #value
-  * use.coding ^slicing.discriminator.path = "system"
-  * use.coding ^slicing.rules = #open
-  * use.coding contains
-    //   hl7 0..1 MS and
-      43plus 0..1 MS
-    //   addition 0..1
-//   * use.coding[hl7] from $VS_HL7_DiagRole (extensible)
-//   * use.coding[hl7].system = $CS_HL7_DiagRole
-  * use.coding[43plus] from $VS_43Plus_EncounterDiagnosisRole (extensible)
-//   * use.coding[addition] from $VS_Meta_ExtendedHL7DiagnosisRole (extensible)
-//   * use.coding[addition].system = $CS_Meta_ExtendedHL7DiagnosisRole
-  * rank MS
 * hospitalization MS
-* hospitalization.extension contains
-    $EX_TH_EncounterDischargeStatus named dischargeStatus 0..1 MS
+// * hospitalization.extension contains
+    // $EX_CHI_EncounterAdmitType named admitType 0..1 MS and 
+    // $EX_TH_EncounterIpdDischargeStatus named dischargeStatus 0..1 MS and
+    // $EX_TH_EncounterIpdDischargeType named dischargeType 0..1 MS
     // $EX_TH_EncounterDischargeInstruction named dischargeInstruction  0..1 MS
-// * hospitalization.origin MS
+* hospitalization.origin MS
 // * hospitalization.origin only Reference($SD_Organization_Provider)
-* hospitalization.admitSource MS
-* hospitalization.admitSource.coding ^slicing.discriminator[0].type = #value
-* hospitalization.admitSource.coding ^slicing.discriminator[=].path = "system"
-* hospitalization.admitSource.coding ^slicing.rules = #open
-* hospitalization.admitSource.coding contains
-//     hl7 0..1 and
+// * hospitalization.admitSource MS
+// * hospitalization.admitSource.coding ^slicing.discriminator[0].type = #value
+// * hospitalization.admitSource.coding ^slicing.discriminator[=].path = "system"
+// * hospitalization.admitSource.coding ^slicing.rules = #open
+// * hospitalization.admitSource.coding contains
+//     chi 0..1 MS
 //     thcc 0..1 MS and
 //     thccAccident 0..1 MS
-// * hospitalization.admitSource.coding[hl7] from $VS_HL7_AdmitSource (extensible)
+// * hospitalization.admitSource.coding[chi] from $VS_CHI_AdmitSource (extensible)
 // * hospitalization.admitSource.coding[hl7].system 1..
 // * hospitalization.admitSource.coding[hl7].system = $CS_HL7_AdmitSource (exactly)
 // * hospitalization.admitSource.coding[hl7].code 1..
@@ -130,13 +124,9 @@ Description: "การรับบริการ OPD"
 // * hospitalization.admitSource.coding[thccAccident].system 1..
 // * hospitalization.admitSource.coding[thccAccident].system = $CS_THCC_AccidentAdmitSource (exactly)
 // * hospitalization.admitSource.coding[thccAccident].code 1..
-     chiAdmitType 0..1 MS
-* hospitalization.admitSource.coding[chiAdmitType] from $VS_CHI_TypeIn (extensible)
+    //  chiAdmitType 0..1 MS
+// * hospitalization.admitSource.coding[chiAdmitType] from $VS_CHI_TypeIn (extensible)
 // * hospitalization.destination only Reference($SD_Organization_Provider)
-// * location MS
-//   * extension contains
-//     $EX_TH_EncounterServiceLocationType named serviceLocationType 0..1 MS
-//   * location MS
 * serviceProvider MS
 * serviceProvider only Reference($SD_Organization_Provider)
 // * serviceProvider.extension contains

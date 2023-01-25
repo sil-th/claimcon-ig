@@ -2,7 +2,7 @@ Profile: ClaimConEncounterIpd
 Parent: Encounter
 Id: claimcon-encounter-ipd
 Title: "ClaimCon Encounter: IPD"
-Description: "การรับบริการสุขภาพ"
+Description: "การรับบริการ IPD"
 * ^url = $SD_Encounter_Ipd
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

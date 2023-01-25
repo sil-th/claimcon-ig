@@ -5,6 +5,7 @@ Alias: $SD_Claim_IpdCoinsurance = https://fhir-ig.sil-th.org/claimcon/StructureD
 Alias: $SD_Claim_Med = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-claim-med
 Alias: $SD_Condition_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-condition-base
 Alias: $SD_Coverage_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-coverage-base
+Alias: $SD_Encounter_Ae = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-ae
 Alias: $SD_Encounter_Opd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-opd
 Alias: $SD_Encounter_Ipd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-ipd
 Alias: $SD_MedicationDispense_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-medicationdispense-base
@@ -13,6 +14,7 @@ Alias: $SD_Organization_Provider = https://fhir-ig.sil-th.org/claimcon/Structure
 Alias: $SD_Patient_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-patient-base
 Alias: $SD_Practitioner_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-practitioner-base
 Alias: $SD_Procedure_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-procedure-base
+Alias: $SD_ServiceRequest_Refer = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-servicerequest-refer
 
 
 Alias: $SD_AllergyIntolerance_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/mophpc-allergyintolerance-base

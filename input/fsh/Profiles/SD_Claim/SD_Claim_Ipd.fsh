@@ -9,6 +9,7 @@ Description: "ค่าใช้จ่ายการรับบริการ
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
     $EX_CHI_ProjectCode named projectCode 0..1 MS and
+    $EX_CHI_EventCode named eventCode 0..1 MS and
     $EX_CHI_TotalDiscount named totalDiscount 0..1 MS and
     $EX_CHI_TotalDrg named totalDrg 0..1 MS and
     $EX_CHI_TotalXDrg named totalXDrg 0..1 MS
@@ -70,11 +71,11 @@ Description: "ค่าใช้จ่ายการรับบริการ
     $EX_CHI_ItemNetCharge named itemNetCharge 0..1 MS and
     $EX_CHI_ItemDiscount named itemDiscount 0..1 MS and
     $EX_CHI_ItemClaimCat named itemClaimCat 0..1 MS and
-    $EX_CHI_ItemRevDateTime named itemRevDate 0..1 MS
+    $EX_CHI_ItemRevDateTime named itemRevDate 0..1 MS and
+    $EX_TH_ClaimItemCopay named itemCopay 0..1 MS
     // $EX_CHI_ItemCharge named itemCharge 0..1 MS and
     // $EX_CHI_ItemNetCharge named itemNetCharge 0..1 MS
 //     $EX_TH_ClaimItemCost named itemCost 0..1 MS and
-//     $EX_TH_ClaimItemCopay named itemCopay 0..1 MS and
 //     $EX_TH_ClaimItemPaid named itemPaid 0..1 MS and
 //     $EX_TH_ClaimItemUnpaid named itemUnpaid 0..1 MS
   * category MS
