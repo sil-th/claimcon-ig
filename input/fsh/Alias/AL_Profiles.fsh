@@ -1,3 +1,4 @@
+Alias: $SD_Account_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-account-base
 Alias: $SD_Appointment_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-appointment-base
 Alias: $SD_Claim_Opd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-claim-opd
 Alias: $SD_Claim_Ipd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-claim-ipd

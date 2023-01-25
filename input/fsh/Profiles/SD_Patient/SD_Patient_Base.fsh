@@ -130,8 +130,12 @@ Description: "ผู้ป่วย/ผู้รับบริการสุ�
 * maritalStatus.coding ^slicing.discriminator[=].path = "system"
 * maritalStatus.coding ^slicing.rules = #open
 * maritalStatus.coding contains
-    chi 0..1
+    hl7 0..1 MS and
+    chi 0..1 MS and
+    eclaim 0..1 MS
+* maritalStatus.coding[hl7] from $VS_HL7_MaritalStatus (extensible)
 * maritalStatus.coding[chi] from $VS_CHI_Marital (extensible)
+* maritalStatus.coding[eclaim] from $VS_THCC_Marital (extensible)
 // * generalPractitioner MS
 // * generalPractitioner ^short = "แพทย์ประจำตัว หรือสถานพยาบาลปฐมภูมิของบุคคล"
 // * generalPractitioner only Reference($SD_Practitioner_Base or $SD_Organization_Provider or $SD_PractitionerRole_Base )

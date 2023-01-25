@@ -56,7 +56,6 @@ Description: "ค่าใช้จ่ายการรับบริการ
 * provider MS
 // * priority MS
 // * supportingInfo MS
-// * diagnosis MS
 * diagnosis MS
 * procedure MS
 * insurance MS

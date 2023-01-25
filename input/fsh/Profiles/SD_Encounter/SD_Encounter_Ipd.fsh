@@ -54,7 +54,14 @@ Description: "การรับบริการ IPD"
 // * type[chiClass].coding from $VS_CHI_ServiceClass (extensible)
 // * type[chiTypeServe].coding from $VS_CHI_TypeServ (extensible)
 * serviceType MS
-* serviceType from $VS_CHI_Clinic (extensible)
+* serviceType.coding ^slicing.discriminator[0].type = #value
+* serviceType.coding ^slicing.discriminator[=].path = "$this"
+* serviceType.coding ^slicing.rules = #open
+* serviceType.coding contains
+    chi 0..1 MS and
+    eclaim 0..1 MS
+* serviceType.coding[chi] from $VS_CHI_Clinic (extensible)
+* serviceType.coding[eclaim] from $VS_eClaim_Clinic (extensible)
 * subject MS
 * subject only Reference($SD_Patient_Base)
 // * basedOn MS
@@ -113,6 +120,9 @@ Description: "การรับบริการ IPD"
     $EX_TH_EncounterIpdDischargeStatus named dischargeStatus 0..1 MS and
     $EX_TH_EncounterIpdDischargeType named dischargeType 0..1 MS
     // $EX_TH_EncounterDischargeInstruction named dischargeInstruction  0..1 MS
+* hospitalization.extension[admitType] ^short = "ประเภทการรับ admit (CHI)"
+* hospitalization.extension[dischargeStatus] ^short = "สถานภาพ การจําหน่ายผู้ป่วย (e-claim & CHI)"
+* hospitalization.extension[dischargeType] ^short = "วิธีการจําหน่ายผู้ป่วย (e-claim & CHI)"
 // * hospitalization.origin MS
 // * hospitalization.origin only Reference($SD_Organization_Provider)
 * hospitalization.admitSource MS

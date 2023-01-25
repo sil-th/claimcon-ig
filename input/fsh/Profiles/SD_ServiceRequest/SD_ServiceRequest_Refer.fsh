@@ -73,11 +73,10 @@ Description: "การส่งต่อผู้ป่วยระหว่า
 //     $EX_TH_ServiceRequestThaiReferPriority named thaiReferPriority 0..1 MS and
 //     $EX_TH_ServiceRequestReferPriorityReason named priorityReason 0..1 MS
 // * code MS
-// * subject MS
-// * subject only Reference($SD_Patient_Base)
-// * encounter MS
-// * encounter only Reference($SD_Encounter_Base)
-// * authoredOn MS
+* subject MS
+* subject only Reference($SD_Patient_Base)
+* encounter MS
+* authoredOn MS
 * requester MS
 // * requester only Reference($SD_Practitioner_Base)
 * performer MS

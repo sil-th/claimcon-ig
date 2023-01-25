@@ -10,7 +10,10 @@ Description: "การรับบริการ OPD"
 * extension contains
 //     $EX_TH_EncounterPatientLocationType named patientLocationType 0..1 MS and
 //     $EX_TH_EncounterServiceHour named serviceHour 0..1 MS and
-    $EX_TH_EncounterProviderType named providerType 0..1 MS
+    $EX_TH_EncounterProviderType named providerType 0..1 MS and
+    $EX_TH_EncounterServiceTypeTH named serviceType 0..1 MS
+* extension[providerType] ^short = "รหัสประเภทสถานพยาบาลที่รักษา (e-claim & CHI)"
+* extension[serviceType] ^short = "ประเภทการให้บริการ (e-claim OPD)"
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"
@@ -53,7 +56,14 @@ Description: "การรับบริการ OPD"
 * type[chiClass].coding from $VS_CHI_ServiceClass (extensible)
 * type[chiTypeServe].coding from $VS_CHI_TypeServ (extensible)
 * serviceType MS
-* serviceType from $VS_CHI_Clinic (extensible)
+* serviceType.coding ^slicing.discriminator[0].type = #value
+* serviceType.coding ^slicing.discriminator[=].path = "$this"
+* serviceType.coding ^slicing.rules = #open
+* serviceType.coding contains
+    chi 0..1 MS and
+    eclaim 0..1 MS
+* serviceType.coding[chi] from $VS_CHI_Clinic (extensible)
+* serviceType.coding[eclaim] from $VS_eClaim_Clinic (extensible)
 * subject MS
 * subject only Reference($SD_Patient_Base)
 // * basedOn MS
@@ -91,14 +101,15 @@ Description: "การรับบริการ OPD"
 // * reasonCode.coding[snomed].system = $SCT (exactly)
 // * reasonCode.coding[snomed].code 1..
 * diagnosis MS
+  * condition MS
   * use.coding ^slicing.discriminator.type = #value
   * use.coding ^slicing.discriminator.path = "system"
   * use.coding ^slicing.rules = #open
   * use.coding contains
-    //   hl7 0..1 MS and
+      hl7 0..1 MS and
       43plus 0..1 MS
     //   addition 0..1
-//   * use.coding[hl7] from $VS_HL7_DiagRole (extensible)
+  * use.coding[hl7] from $VS_HL7_DiagRole (extensible)
 //   * use.coding[hl7].system = $CS_HL7_DiagRole
   * use.coding[43plus] from $VS_43Plus_EncounterDiagnosisRole (extensible)
 //   * use.coding[addition] from $VS_Meta_ExtendedHL7DiagnosisRole (extensible)
@@ -110,19 +121,22 @@ Description: "การรับบริการ OPD"
     // $EX_TH_EncounterDischargeInstruction named dischargeInstruction  0..1 MS
 // * hospitalization.origin MS
 // * hospitalization.origin only Reference($SD_Organization_Provider)
+* hospitalization.extension[dischargeStatus] ^short = "รหัสสถานะผู้มารับบริการเมื่อเสร็จสิ้นบริการ (e-claim & CHI)"
 * hospitalization.admitSource MS
 * hospitalization.admitSource.coding ^slicing.discriminator[0].type = #value
 * hospitalization.admitSource.coding ^slicing.discriminator[=].path = "system"
 * hospitalization.admitSource.coding ^slicing.rules = #open
 * hospitalization.admitSource.coding contains
 //     hl7 0..1 and
-//     thcc 0..1 MS and
+    thcc 0..1 MS and
+    chi 0..1 MS
 //     thccAccident 0..1 MS
 // * hospitalization.admitSource.coding[hl7] from $VS_HL7_AdmitSource (extensible)
 // * hospitalization.admitSource.coding[hl7].system 1..
 // * hospitalization.admitSource.coding[hl7].system = $CS_HL7_AdmitSource (exactly)
 // * hospitalization.admitSource.coding[hl7].code 1..
-// * hospitalization.admitSource.coding[thcc] from $VS_THCC_AdmitSource (extensible)
+* hospitalization.admitSource.coding[thcc] from $VS_THCC_AdmitSource (extensible)
+* hospitalization.admitSource.coding[thcc] ^short = "ประเภทการมารับบริการ (e-claim)"
 // * hospitalization.admitSource.coding[thcc].system 1..
 // * hospitalization.admitSource.coding[thcc].system = $CS_THCC_AdmitSource (exactly)
 // * hospitalization.admitSource.coding[thcc].code 1..
@@ -130,13 +144,14 @@ Description: "การรับบริการ OPD"
 // * hospitalization.admitSource.coding[thccAccident].system 1..
 // * hospitalization.admitSource.coding[thccAccident].system = $CS_THCC_AccidentAdmitSource (exactly)
 // * hospitalization.admitSource.coding[thccAccident].code 1..
-     chiAdmitType 0..1 MS
-* hospitalization.admitSource.coding[chiAdmitType] from $VS_CHI_TypeIn (extensible)
+* hospitalization.admitSource.coding[chi] from $VS_CHI_TypeIn (extensible)
+* hospitalization.admitSource.coding[chi] ^short = "ประเภทการมารับบริการ (CHI)"
 // * hospitalization.destination only Reference($SD_Organization_Provider)
-// * location MS
+* location MS
 //   * extension contains
 //     $EX_TH_EncounterServiceLocationType named serviceLocationType 0..1 MS
-//   * location MS
+  * location.identifier MS
+  * location.identifier ^short = "รหัส 5 หลักคลินิกที่รับบริการ (e-claim)"
 * serviceProvider MS
 * serviceProvider only Reference($SD_Organization_Provider)
 // * serviceProvider.extension contains
