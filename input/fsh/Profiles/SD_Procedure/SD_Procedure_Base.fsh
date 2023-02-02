@@ -36,7 +36,4 @@ Description: "การทำหัตถการหรือการรัก
 * performed[x] only dateTime or Period or string
 * performer MS
   * actor only Reference($SD_Practitioner_Base)
-//   * onBehalfOf MS
 * location MS
-// * outcome MS
-// * note MS

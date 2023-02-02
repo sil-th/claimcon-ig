@@ -79,34 +79,3 @@ Description: "ผู้ให้บริการสุขภาพ"
   * type = $CS_TH_IdentifierType#healthVolun
   * system 1..
   * value 1..
-// * name MS
-// * name ^short = "ชื่อ-นามกสุล"
-// * name.family MS
-// * name.family ^short = "นามสกุล ภาษาไทย"
-// * name.given MS
-// * name.given ^short = "ชื่อ ภาษาไทย"
-// * name.prefix MS
-// * name.prefix ^short = "คำนำหน้า ภาษาไทย"
-// * telecom MS
-// * telecom ^slicing.discriminator.type = #value
-// * telecom ^slicing.discriminator.path = "system"
-// * telecom ^slicing.rules = #open
-// * telecom contains
-//     phone 0..* MS and
-//     email 0..* MS
-// * telecom[phone] ^short = "โทรศัพท์ติดต่อ"
-// * telecom[phone] ^comment = "เบอร์โทรศัพท์ที่ใช้ในการติดต่อ (ที่ทำงาน)"
-// * telecom[phone].system = #phone (exactly)
-// * telecom[email] ^short = "E-mail ติดต่อ"
-// * telecom[email] ^comment = "E-mail ที่ใช้ในการติดต่อ (ที่ทำงาน)"
-// * telecom[email].system = #email (exactly)
-// * gender MS
-// * gender ^short = "เพศ"
-// * birthDate MS
-// * birthDate ^short = "วันเกิด"
-// * qualification MS
-//   * code MS
-//   * period MS
-//   * issuer MS
-//     * extension contains $EX_TH_PractitionerQualificationIssuer named qualificationIssuer 0..1 MS
-

@@ -21,5 +21,3 @@ Description: "หน่วยบริการสุขภาพ"
 * identifier[hcode].value obeys hcode-length
 * name MS
 * name ^short = "ชื่อสถานพยาบาล"
-// * partOf only Reference($SD_Organization_Provider)
-// * partOf MS

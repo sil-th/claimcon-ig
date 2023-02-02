@@ -7,21 +7,8 @@ Description: "การสั่งยา"
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
-// * extension contains
-//     $EX_TH_MedicationRequestSource named medicationSource 0..* MS and
-//     $EX_TH_MedicationRequestNedCriteria named npc 0..* MS and
-//     $EX_TH_MedicationRequestApprovedNo named approvedNo 0..* MS
 * status MS
 * intent MS
-// * category MS
-// * category ^slicing.discriminator[0].type = #value
-// * category ^slicing.discriminator[=].path = "coding.system"
-// * category ^slicing.rules = #open
-// * category contains eclaim 0..1 MS
-// * category[eclaim].coding from $VS_eClaim_MedicationCategory (extensible)
-// * category[eclaim].coding.system 1..
-// * category[eclaim].coding.system = $CS_eClaim_MedicationCategory
-// * category[eclaim].coding.code 1..
 * medication[x] 1.. MS
 * medication[x] only CodeableConcept
 * medicationCodeableConcept MS

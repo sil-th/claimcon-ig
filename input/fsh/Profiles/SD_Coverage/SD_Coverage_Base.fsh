@@ -7,8 +7,8 @@ Description: "ข้อมูลสิทธิ"
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
-// * extension contains
-//     $EX_TH_CoverageContractedProvider named contractedProvider 0..* MS
+* extension contains
+  $EX_TH_CoverageContractedProvider named provider 0..* MS
 * identifier MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "type"
@@ -20,12 +20,9 @@ Description: "ข้อมูลสิทธิ"
 * identifier[cid].system = $ID_ThaiCid (exactly)
 * identifier[cid].value 1..
 * identifier[cid].value obeys CID-length
-// * identifier[cid].value ^example.label = "เลขประจำตัวประชาชน"
-// * identifier[cid].value ^example.valueString = "1234567890123"
 * type MS
-// * policyHolder MS
-// * subscriber MS
+* type from $VS_TH_CoverageType (extensible)
 * beneficiary only Reference($SD_Patient_Base)
 * beneficiary MS
-// * period MS
-// * payor MS
+* period.end MS
+* class MS
