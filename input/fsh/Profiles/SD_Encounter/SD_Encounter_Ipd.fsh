@@ -38,7 +38,6 @@ Description: "การรับบริการ IPD"
 * subject MS
 * subject only Reference($SD_Patient_Base)
 * participant MS
-* participant.individual only Reference($SD_Practitioner_Base)
 * period MS
   * start MS
   * end MS

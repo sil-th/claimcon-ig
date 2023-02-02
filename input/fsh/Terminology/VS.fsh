@@ -1,6 +1,6 @@
 ValueSet: VS_TMLT_eClaim_LabFU
 Id: vs-tmlt-eclaim-labfu
-Title: "ValueSet: รหัสการตรวจทางห้องปฏิบัติการ TMLT ที่ใช้ในแฟ้ม LABFU (e-Claim)"
+Title: "รหัสการตรวจทางห้องปฏิบัติการ TMLT ที่ใช้ในแฟ้ม LABFU (e-Claim)"
 Description: "รหัสการตรวจทางห้องปฏิบัติการ TMTL ที่ใช้ในแฟ้ม LABFU (e-Claim)"
 * ^url = $VS_TMLT_eClaim_LabFU
 * $CS_TMLT#320281 "Fasting glucose [mg/dL] in Venous blood"
@@ -24,3 +24,33 @@ Description: "รหัสการตรวจทางห้องปฏิบ
 * $CS_TMLT#320489 "Bicarbonate [mmol/L] in Venous blood"
 * $CS_TMLT#320022 "Phosphate [mg/dL] in Serum or Plasma"
 * $CS_TMLT#320216 "Parathyrin.intact [pg/mL] in Serum or Plasma"
+
+
+ValueSet: VS_ClaimCon_ObsCode
+Id: vs-claimcon-obscode
+Title: "รหัสการตรวจที่มีใช้ใน claim dataset"
+Description: "รหัสการตรวจที่มีใช้ใน claim dataset"
+* ^url = $VS_ClaimCon_ObsCode
+* $LNC#11341-5 "History of Occupation"
+* $LNC#8310-5 "Body temperature"
+* $SCT#386725007 "Body temperature"
+* $LNC#8480-6 "Systolic blood pressure"
+* $SCT#271649006 "Systolic blood pressure"
+* $LNC#8462-4 "Diastolic blood pressure"
+* $SCT#271650006 "Diastolic blood pressure"
+* $LNC#8867-4 "Heart rate"
+* $SCT#364075005 "Heart rate"
+* $LNC#9279-1 "Respiratory rate"
+* $SCT#86290005 "Respiratory rate"
+* $LNC#29463-7 "Body weight"
+* $SCT#27113001 "Body weight"
+* $SCT#871562009 "Detection of SARS-CoV-2"
+* $LNC#96761-2 "Total score Barthel Index"
+* $SCT#273302005 "Barthel index"
+* $LNC#11996-6 "[#] Pregnancies"
+* $SCT#161732006 "Gravida"
+* $LNC#57714-8 "Obstetric estimation of gestational age"
+* $SCT#57036006 "Fetal gestational age"
+* $CS_TMLT#300058 "Hemoglobin E [+/-] in Blood by DCIP"
+* $LNC#8665-2 "Last menstrual period start date	"
+* $SCT#21840007 "Date of last menstrual period"

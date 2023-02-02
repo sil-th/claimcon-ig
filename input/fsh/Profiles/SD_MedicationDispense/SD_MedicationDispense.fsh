@@ -37,7 +37,6 @@ Description: "การจ่ายยา"
 * context only Reference($SD_Encounter_Opd or $SD_Encounter_Ipd)
 * context MS
 * performer MS
-* performer.actor only Reference($SD_Practitioner_Base)
 * performer.actor MS
 * performer.actor ^short = "เภสัชกรที่จ่ายยา"
 * authorizingPrescription only Reference($SD_MedicationRequest_Base)

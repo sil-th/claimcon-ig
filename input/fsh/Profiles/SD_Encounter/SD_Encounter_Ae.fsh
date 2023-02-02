@@ -46,7 +46,6 @@ Description: "การรับบริการ Accident / Emergency"
 * subject only Reference($SD_Patient_Base)
 * basedOn MS
 * participant MS
-* participant.individual only Reference($SD_Practitioner_Base)
 * period MS
   * start MS
   * end MS

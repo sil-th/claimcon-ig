@@ -25,5 +25,4 @@ Description: "การวินิจฉัยโรค/ปัญหาสุ�
 * code.coding[snomed].code 1..
 * subject only Reference($SD_Patient_Base)
 * recordedDate MS
-* asserter only Reference($SD_Practitioner_Base)
 * asserter MS

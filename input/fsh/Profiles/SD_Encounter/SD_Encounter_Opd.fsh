@@ -50,7 +50,6 @@ Description: "การรับบริการ OPD"
 * subject MS
 * subject only Reference($SD_Patient_Base)
 * participant MS
-* participant.individual only Reference($SD_Practitioner_Base)
 * period MS
 * diagnosis MS
   * condition MS
