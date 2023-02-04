@@ -2,7 +2,7 @@ Profile: ClaimConCoverageBase
 Parent: Coverage
 Id: claimcon-coverage-base
 Title: "ClaimCon Coverage"
-Description: "ข้อมูลสิทธิ"
+Description: "ข้อมูลสิทธิการรักษาพยาบาล"
 * ^url = $SD_Coverage_Base
 * ^status = #draft
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"

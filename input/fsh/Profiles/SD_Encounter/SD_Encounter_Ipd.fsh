@@ -8,7 +8,9 @@ Description: "การรับบริการ IPD"
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
-  $EX_TH_EncounterLeaveDay named leaveDay 0..1 MS
+    $EX_TH_EncounterProviderType named providerType 0..1 MS and
+    $EX_TH_EncounterLeaveDay named leaveDay 0..1 MS
+* extension[providerType] ^short = "รหัสประเภทสถานพยาบาลที่รักษา (e-claim & CHI)"
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"

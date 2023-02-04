@@ -37,8 +37,8 @@ pages:
     title: TH Claim Consolidation (ClaimCon)
   profiles.md:
     title: รายการ Profiles
-  extensions.md:
-    title: รายการ Extensions
+  # extensions.md:
+  #   title: รายการ Extensions
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -48,7 +48,7 @@ menu:
   สารบัญ: toc.html
   เนื้อหาทั้งหมด: artifacts.html
   Profiles: profiles.html
-  Extensions: extensions.html
+  # Extensions: extensions.html
   # 43 แฟ้ม plus: files-listing.html
   # Other Resources:
   #   "FHIR Spec ": new-tab {{site.data.fhir.path}}index.html
