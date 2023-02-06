@@ -9,8 +9,12 @@ Description: "การรับบริการ IPD"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
     $EX_TH_EncounterProviderType named providerType 0..1 MS and
-    $EX_TH_EncounterLeaveDay named leaveDay 0..1 MS
+    $EX_TH_ServiceRequestReferPatientCatagory named referType 0..1 MS and
+    $EX_CHI_EncounterReferPurpose named referPurpose 0..1 MS and
+    $EX_TH_EncounterLeaveDay named leaveDay 0..1 MS     
 * extension[providerType] ^short = "รหัสประเภทสถานพยาบาลที่รักษา (e-claim & CHI)"
+* extension[referType] ^short = "เป็นการรักษากรณีอุบัติเหตุและ/หรือฉุกเฉิน (กรณีรับ refer)"
+* extension[referPurpose] ^short = "สาเหตุที่ส่งผู้ป่วยมา (กรณีรับ refer)"
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"
@@ -28,6 +32,10 @@ Description: "การรับบริการ IPD"
   * value 1..
 * status MS
 * class MS
+* priority
+  * extension contains
+    $EX_TH_ServiceRequestReferPriorityReason named priorityReason 0..1 MS
+* priority.extension[priorityReason] ^short = "รหัสข้อบ่งชี้ของกรณีฉุกเฉิน (กรณีรับ refer)"
 * serviceType MS
 * serviceType.coding ^slicing.discriminator[0].type = #value
 * serviceType.coding ^slicing.discriminator[=].path = "$this"
@@ -69,6 +77,7 @@ Description: "การรับบริการ IPD"
 * location MS
   * extension contains
     $EX_TH_EncounterIpdJourney named wardType 0..1 MS
-  * location.identifier MS
+  * location.identifier.value MS
+  * location.identifier.value ^short = "ีรหัสที่รพ.กำหนด (CHI) หรือรหัส 5 หลักคลินิกที่รับบริการ (e-claim)"
 * serviceProvider MS
 * serviceProvider only Reference($SD_Organization_Provider)

@@ -9,9 +9,11 @@ Description: "การรับบริการ OPD"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
     $EX_TH_EncounterProviderType named providerType 0..1 MS and
-    $EX_TH_EncounterServiceTypeTH named serviceType 0..1 MS
+    $EX_TH_ServiceRequestReferPatientCatagory named referType 0..1 MS and
+    $EX_CHI_EncounterReferPurpose named referPurpose 0..1 MS 
 * extension[providerType] ^short = "รหัสประเภทสถานพยาบาลที่รักษา (e-claim & CHI)"
-* extension[serviceType] ^short = "ประเภทการให้บริการ (e-claim OPD)"
+* extension[referType] ^short = "เป็นการรักษากรณีอุบัติเหตุและ/หรือฉุกเฉิน (กรณีรับ refer)"
+* extension[referPurpose] ^short = "สาเหตุที่ส่งผู้ป่วยมา (กรณีรับ refer)"
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"
@@ -29,15 +31,24 @@ Description: "การรับบริการ OPD"
   * value 1..
 * status MS
 * class MS
+* priority
+  * extension contains
+    $EX_TH_ServiceRequestReferPriorityReason named priorityReason 0..1 MS
+* priority.extension[priorityReason] ^short = "รหัสข้อบ่งชี้ของกรณีฉุกเฉิน (กรณีรับ refer)"
 * type MS
 * type ^slicing.discriminator[0].type = #value
 * type ^slicing.discriminator[=].path = "$this"
 * type ^slicing.rules = #open
 * type contains
     chiClass 0..1 MS and
-    chiTypeServe 0..1 MS
+    chiTypeServe 0..1 MS and
+    eclaimType 0..1 MS
+* type[chiClass] ^short = "ประเภทของ Services (CSOP OPServices)"
 * type[chiClass].coding from $VS_CHI_ServiceClass (extensible)
+* type[chiTypeServe] ^short = "ลักษณะทาง clinic ของการใช้บริการ (CSOP OPServices)"
 * type[chiTypeServe].coding from $VS_CHI_TypeServ (extensible)
+* type[eclaimType] ^short = "ประเภทการให้บริการ (e-claim OPD)"
+* type[eclaimType].coding from $VS_eClaim_ServiceTypeTH (extensible)
 * serviceType MS
 * serviceType.coding ^slicing.discriminator[0].type = #value
 * serviceType.coding ^slicing.discriminator[=].path = "$this"
@@ -78,7 +89,7 @@ Description: "การรับบริการ OPD"
 * hospitalization.admitSource.coding[chi] from $VS_CHI_TypeIn (extensible)
 * hospitalization.admitSource.coding[chi] ^short = "ประเภทการมารับบริการ (CHI)"
 * location MS
-  * location.identifier MS
-  * location.identifier ^short = "รหัส 5 หลักคลินิกที่รับบริการ (e-claim)"
+  * location.identifier.value MS
+  * location.identifier.value ^short = "ีรหัสที่รพ.กำหนด (CHI) หรือรหัส 5 หลักคลินิกที่รับบริการ (e-claim)"
 * serviceProvider MS
 * serviceProvider only Reference($SD_Organization_Provider)

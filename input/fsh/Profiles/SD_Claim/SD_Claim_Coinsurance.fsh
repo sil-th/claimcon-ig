@@ -1,7 +1,7 @@
 Profile: ClaimConClaimCoinsurance
 Parent: Claim
 Id: claimcon-claim-coinsurance
-Title: "ClaimCon Claim: IPD Coinsurance"
+Title: "ClaimCon Claim: Coinsurance"
 Description: "ค่าใช้จ่ายที่เบิกได้จากสิทธิประกันสุขภาพอื่น"
 * ^url = $SD_Claim_Coinsurance
 * ^status = #draft
@@ -29,9 +29,6 @@ Description: "ค่าใช้จ่ายที่เบิกได้จา
 * provider MS
 * insurance MS
 * insurance.coverage MS
-* accident MS
-  * date MS
-* accident.date.extension contains $EX_TH_ClaimAccidentDateTime named accidentDateTime 0..1 MS
 * item MS
   * productOrService MS
   * productOrService from $VS_CHI_CoinsuranceCat (extensible)

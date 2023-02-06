@@ -30,7 +30,7 @@ Description: "ค่าใช้จ่ายการรับบริการ
 * identifier[invNo].system ^example.valueUri = $ID_LO_INV
 * identifier[invNo].value 1..
 * status MS
-* type = $CS_HL7_ClaimType#pharmacy
+* type = $CS_HL7_ClaimType#institutional
 * patient only Reference($SD_Patient_Base)
 * patient MS
 * created MS

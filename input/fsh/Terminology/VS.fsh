@@ -54,3 +54,50 @@ Description: "รหัสการตรวจที่มีใช้ใน cl
 * $CS_TMLT#300058 "Hemoglobin E [+/-] in Blood by DCIP"
 * $LNC#8665-2 "Last menstrual period start date	"
 * $SCT#21840007 "Date of last menstrual period"
+
+
+// Dep Code
+// 702877000 | Internal medicine clinic
+// 90484001 | Hospital-based outpatient general surgery clinic
+// 56189001 | Hospital-based outpatient obstetrical clinic
+// 22549003 | Hospital-based outpatient gynecology clinic
+// 3729002 | Hospital-based outpatient pediatric clinic
+// 78088001 | Hospital-based outpatient ophthalmology clinic
+// 78001009 | Hospital-based outpatient orthopedics clinic
+// 14866005 | Hospital-based outpatient mental health clinic
+// 79491001 | Hospital-based radiology facility
+// 10206005 | Hospital-based outpatient dental clinic
+// 37546005 | Hospital-based outpatient rehabilitation clinic
+// 31628002 | Hospital-based outpatient family medicine clinic
+// 36293008 | Hospital-based outpatient pain clinic
+// 394777002 | Health encounter sites
+// 702877000 | Internal medicine clinic
+// 702860000 | General surgery clinic
+// 702862008 | Gynecology clinic
+// 702900003 | Pediatric clinic
+// 702852001 | Ear, nose and throat clinic
+// 702894003 | Ophthalmology clinic
+// 702882007 | Mental health clinic
+// 702846002 | Dental clinic
+// 702916001 | Rehabilitation clinic
+// 441480003 | Primary care department
+// 394761003 | General practitioner practice site
+// 702855004 | Family medicine clinic
+// 702897005 | Pain clinic
+// 702891006 | Neurosurgery clinic 
+// 702893009 | Occupational therapy clinic
+// 394777002 | Health encounter sites
+// 309912009 | Medical department
+// 309967005 | Surgical department
+// 309944008 | Obstetrics department
+// 309943002 | Gynecology department
+// 309945009 | Pediatric department
+// 309978002 | Ear, nose and throat department
+// 309988001 | Ophthalmology department
+// 225728007 | Accident and Emergency department
+// 309940004 | Rehabilitation department
+// 441480003 | Primary care department
+// 394761003 | General practitioner practice site
+// 309965002 | Occupational health department
+// 33022008 | Hospital-based outpatient department
+// 440654001 | Inpatient environment 

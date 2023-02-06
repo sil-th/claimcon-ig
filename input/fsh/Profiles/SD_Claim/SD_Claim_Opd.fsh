@@ -47,6 +47,11 @@ Description: "ค่าใช้จ่ายการรับบริการ
 * insurance MS
 * insurance.coverage MS
 * insurance.preAuthRef MS
+* accident
+  * date MS
+    * extension contains
+      $EX_TH_ClaimAccidentDateTime named accidentDateTime 0..1 MS
+    * extension[accidentDateTime] ^short = "วันที่และเวลาที่เกิดอุบัติเหตุ"
 * item MS
   * extension contains
     $EX_CHI_ItemCharge named itemCharge 0..1 MS and
@@ -58,9 +63,9 @@ Description: "ค่าใช้จ่ายการรับบริการ
   * category.coding contains
       thCategory 0..1 MS and
       eClaimCategory 0..1 MS
-  * category.coding[thCategory] ^short = "หมวดค่าใช้จ่ายบริการสาธารณสุข"
-  * category.coding[thCategory] from $VS_TH_FeeCategory (required)
-  * category.coding[eClaimCategory] ^short = "หมวดค่าใช้จ่ายบริการสาธารณสุข"
+  * category.coding[thCategory] ^short = "หมวดค่าใช้จ่ายบริการสาธารณสุข CHI"
+  * category.coding[thCategory] from $VS_CHI_FeeCategory (required)
+  * category.coding[eClaimCategory] ^short = "หมวดค่าใช้จ่ายบริการสาธารณสุข e-Claim"
   * category.coding[eClaimCategory] from $VS_eClaim_ChargeItem (required)
   * productOrService MS
   * servicedDate MS

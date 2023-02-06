@@ -5,7 +5,6 @@ Alias: $SD_Claim_Coinsurance = https://fhir-ig.sil-th.org/claimcon/StructureDefi
 Alias: $SD_Claim_Med = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-claim-med
 Alias: $SD_Condition_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-condition-base
 Alias: $SD_Coverage_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-coverage-base
-Alias: $SD_Encounter_Ae = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-ae
 Alias: $SD_Encounter_Opd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-opd
 Alias: $SD_Encounter_Ipd = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-encounter-ipd
 Alias: $SD_MedicationDispense_Base = https://fhir-ig.sil-th.org/claimcon/StructureDefinition/claimcon-medicationdispense-base

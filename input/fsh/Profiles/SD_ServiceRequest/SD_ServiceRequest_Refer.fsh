@@ -8,7 +8,7 @@ Description: "การส่งต่อผู้ป่วยระหว่า
 * ^publisher = "Standards and Interoperability Lab - Thailand (SIL-TH)"
 * ^jurisdiction = urn:iso:std:iso:3166#TH
 * extension contains
-    $EX_TH_ServiceRequestReferPatientCatagory named patientCategory 0..1 MS
+    $EX_TH_ServiceRequestReferPatientCatagory named referType 0..1 MS
 * identifier MS
 * identifier ^slicing.discriminator[0].type = #pattern
 * identifier ^slicing.discriminator[=].path = "type"
@@ -41,3 +41,6 @@ Description: "การส่งต่อผู้ป่วยระหว่า
 * authoredOn MS
 * requester MS
 * performer MS
+* insurance
+  * extension contains
+    $EX_TH_AccountAccidentCoverage named accidentFund 0..1 MS
