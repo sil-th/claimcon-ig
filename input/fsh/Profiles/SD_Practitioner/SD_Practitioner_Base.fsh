@@ -12,16 +12,16 @@ Description: "ผู้ให้บริการสุขภาพ"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier contains
-    cid 0..1 MS and
-    proId 0..1 MS and
-    doctorId 0..1 MS and
-    nurseId 0..1 MS and
-    pharmId 0..1 MS and
-    dentId 0..1 MS and
-    medtechId 0..1 MS and
-    physioId 0..1 MS and
-    vetId 0..1 MS and
-    volunId 0..1 MS
+    cid 0..1 and
+    proId 0..1 and
+    doctorId 0..1 and
+    nurseId 0..1 and
+    pharmId 0..1 and
+    dentId 0..1 and
+    medtechId 0..1 and
+    physioId 0..1 and
+    vetId 0..1 and
+    volunId 0..1
 * identifier[cid] ^short = "เลขประจำตัวประชาชน"
   * type from $VS_TH_IdentifierType (extensible)
   * type = $CS_TH_IdentifierType#cid
@@ -29,8 +29,6 @@ Description: "ผู้ให้บริการสุขภาพ"
   * system = $ID_ThaiCid (exactly)
   * value 1..
   * value obeys CID-length
-  * value ^example.label = "เลขประจำตัวประชาชน"
-  * value ^example.valueString = "1234567890123"
 * identifier[proId] ^short = "เลขที่ผู้ให้บริการ ออกโดยโปรแกรม ไม่ซ้ำกันในสถานพยาบาลเดียวกัน"
   * type from $VS_TH_IdentifierType (extensible)
   * type = $CS_TH_IdentifierType#localProv

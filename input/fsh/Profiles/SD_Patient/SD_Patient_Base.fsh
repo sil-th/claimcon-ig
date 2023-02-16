@@ -23,18 +23,21 @@ Description: "ผู้ป่วย/ผู้รับบริการสุ�
   * type from $VS_TH_IdentifierType (extensible)
   * type = $CS_TH_IdentifierType#cid
   * system = $ID_ThaiCid (exactly)
+  * value MS
   * value obeys CID-length
 * identifier[hn] ^short = "เลขประจำตัวผู้ป่วย (HN)"
 * identifier[hn]
   * type from $VS_TH_IdentifierType (extensible)
   * type = $CS_TH_IdentifierType#localHn
   * system obeys HN-uri
+  * value MS
 * identifier[passportNo] ^short = "เลขที่ passport กรณีที่เป็นประชากรต่างด้าวที่มีเลขที่ passport"
 * identifier[passportNo]
   * type from $VS_HL7_IdentifierType (extensible)
   * type = $CS_HL7_IdentifierType#PPN
   * system obeys Passport-uri
   * system ^comment = "กำหนดระบบข้อมูลตามรูปแบบ http://hl7.org/fhir/sid/passport-[XXX] โดย [XXX] คือ รหัสประเทศสามตัวอักษร (alpha-3) ตามมาตรฐาน ISO 3166"
+  * value MS
 * name MS
 * name ^short = "ชื่อ-นามกสุล"
   * family MS
@@ -52,14 +55,10 @@ Description: "ผู้ป่วย/ผู้รับบริการสุ�
     $EX_TH_AddressDopaCode named addressCode 0..1 MS and
     $EX_TH_AddressStructuredLine named structuredLine 0..1 MS
   * extension[addressCode] ^short = "รหัสที่อยู่ ตามกรมการปกครอง"
-  * extension[structuredLine] ^short = "รายละเอียดที่อยู่"
-  * type MS
-  * text MS
-  * line MS
-  * city MS
   * district MS
+  * district ^short = "อำเภอ"
   * state MS
-  * postalCode MS
+  * state ^short = "จังหวัด"
 * maritalStatus MS
 * maritalStatus ^short = "สถานะสมรส"
 * maritalStatus.coding ^slicing.discriminator[0].type = #value

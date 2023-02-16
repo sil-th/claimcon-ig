@@ -31,6 +31,8 @@ Usage: #example
     * extension[+]
       * url = "district"
       * valueCodeableConcept = $CS_DOPA_Location#1007
+  * district = "ปทุมวัน"
+  * state = "กรุงเทพมหานคร"
 * maritalStatus
   * coding[0] = $CS_HL7_MaritalStatus#M "Married"
   * coding[+] = $CS_CHI_Marital#2 "คู่"
