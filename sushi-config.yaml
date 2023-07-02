@@ -7,9 +7,10 @@ id: silth.fhir.th.claimcon
 canonical: https://fhir-ig.sil-th.org/claimcon
 version: 0.1.1
 name: THClaimConImplementaionGuide
-title: (Draft) TH Claim Consolidation (ClaimCon) - FHIR Implementation Guide
-status: draft
-publisher: Standards and Interoperability Lab - Thailand (SIL-TH)
+title: TH Claim Consolidation (ClaimCon) - FHIR Implementation Guide
+status: active
+publisher:
+  name: Standards and Interoperability Lab - Thailand (SIL-TH)
 # contact:
 #   - name: Bill Cod
 #     telecom:
@@ -30,7 +31,7 @@ parameters:
   excludettl: true
   excludemap: true
 copyrightYear: 2023+
-releaseLabel: draft
+releaseLabel: trial-use
 
 pages:
   index.md:
