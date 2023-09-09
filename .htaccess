@@ -1,7 +1,0 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteRule ^StructureDefinition/(.*)$ https://fhir-ig.sil-th.org/claimcon/StructureDefinition-$1.html [R]
-  RewriteRule ^CodeSystem/(.*)$ https://fhir-ig.sil-th.org/claimcon/CodeSystem-$1.html [R]
-  RewriteRule ^ValueSet/(.*)$ https://fhir-ig.sil-th.org/claimcon/ValueSet-$1.html [R]
-  RewriteRule ^Extension/(.*)$ https://fhir-ig.sil-th.org/claimcon/StructureDefinition-$1.html [R]
-</IfModule>

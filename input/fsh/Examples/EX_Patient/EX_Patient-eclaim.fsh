@@ -25,7 +25,7 @@ Usage: #example
 * gender = #male
 * birthDate = "1988-05-21"
 * address
-  * extension
+  * extension[0]
     * url = $EX_TH_AddressDopaCode
     * extension[0]
       * url = "province"

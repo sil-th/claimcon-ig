@@ -8,7 +8,7 @@ Usage: #example
 * category = $CS_HL7_ObservationCat#social-history "Social History"
   * text = "ประวัติทางสังคม"
 * code
-  * coding[0] = $LNC#86188-0 "History of Occupation"
+  * coding[0] = $LNC#11341-5 "History of Occupation"
   * coding[+] = $SCT#184104002 "Patient occupation"
   * text = "ประวัติอาชีพ"
 * subject = Reference(Patient/patient-eclaim)

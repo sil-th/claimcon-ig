@@ -4,10 +4,10 @@
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: silth.fhir.th.claimcon
-canonical: https://fhir-ig.sil-th.org/claimcon
-version: 0.1.1
+canonical: https://fhir-ig.sil-th.org/th/claimcon
+version: 0.1.2
 name: THClaimConImplementaionGuide
-title: TH Claim Consolidation (ClaimCon) - FHIR Implementation Guide
+title: TH Claim Consolidation (ClaimCon) - FHIR Implementation Guide (STU1)
 status: active
 publisher:
   name: Standards and Interoperability Lab - Thailand (SIL-TH)
@@ -21,9 +21,9 @@ description: A representation of Thailand's public health claim dataset in FHIR 
 license: CC0-1.0
 fhirVersion: 4.3.0
 dependencies:
-  sil-th.terms.core: dev
-  silth.fhir.th.extensions: dev
-  hl7.fhir.uv.ips: 1.0.0
+  silth.fhir.terminology.core: 0.1.1
+  silth.fhir.th.extensions: 0.1.0
+  hl7.fhir.uv.ips: 1.1.0
 parameters:
   apply-publisher: true
   apply-contact: true
@@ -40,6 +40,8 @@ pages:
     title: รายการ Profiles
   # extensions.md:
   #   title: รายการ Extensions
+  change_log.md:
+    title: Release Notes
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -49,6 +51,7 @@ menu:
   สารบัญ: toc.html
   เนื้อหาทั้งหมด: artifacts.html
   Profiles: profiles.html
+  Release Notes: change_log.html
   # Extensions: extensions.html
   # 43 แฟ้ม plus: files-listing.html
   # Other Resources:

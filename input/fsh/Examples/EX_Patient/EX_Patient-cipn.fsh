@@ -22,8 +22,8 @@ Usage: #example
   * prefix = "นาย"
 * gender = #male
 * birthDate = "1988-05-21"
-* address
-  * extension
+* address[0]
+  * extension[0]
     * url = $EX_TH_AddressDopaCode
     * extension[0]
       * url = "province"

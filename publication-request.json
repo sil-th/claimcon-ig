@@ -1,0 +1,16 @@
+{
+  "package-id": "silth.fhir.th.claimcon",
+  "version": "0.1.2",
+  "path": "https://fhir-ig.sil-th.org/th/claimcon/0.1.2",
+  "mode": "milestone",
+  "status": "trial-use",
+  "sequence": "STU1 Release 1",
+  "desc": "Initial publication of the Claim Consolidation IG.",
+  "descmd": "Initial publication of the Claim Consolidation IG.",
+  "changes": "change_log.html",
+  "first": true,
+  "title": "Claim Consolidation (ClaimCon) - FHIR Implementation Guide (STU1)",
+  "ci-build": "https://fhir-ig.sil-th.org/th/scaffold/",
+  "category": "Clinical Documents",
+  "introduction": "A representation of Thailand's public health claim dataset in FHIR format"
+}
